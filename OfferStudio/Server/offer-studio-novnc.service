@@ -1,0 +1,10 @@
+[Unit]
+Description=Offer Studio noVNC (SSH tunnel only)
+After=offer-studio-desktop.service
+[Service]
+User=fpc
+ExecStart=/usr/bin/websockify --web=/usr/share/novnc 127.0.0.1:6080 127.0.0.1:5900
+Restart=always
+RestartSec=5
+[Install]
+WantedBy=multi-user.target

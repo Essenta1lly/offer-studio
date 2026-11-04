@@ -1,0 +1,7 @@
+{
+  "host": "server.example.invalid",
+  "user": "offerstudio-tunnel",
+  "keyPath": "/Users/YOUR_USER/.ssh/offerstudio_tunnel",
+  "knownHostsPath": "/Users/YOUR_USER/.ssh/known_hosts",
+  "tokenPath": "/Users/YOUR_USER/Library/Application Support/OfferStudio/Server/api_token"
+}

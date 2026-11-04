@@ -1,0 +1,26 @@
+[Unit]
+Description=Offer Studio LZT five-minute monitor
+After=network-online.target offer-studio-display.service FunPayCardinal@fpc.service
+Requires=offer-studio-display.service
+[Service]
+Type=notify
+NotifyAccess=main
+WatchdogSec=120
+TimeoutStartSec=120
+User=fpc
+WorkingDirectory=/home/fpc/FunPayCardinal/storage/offer_studio/code
+Environment=DISPLAY=:99
+Environment=OFFERSTUDIO_DATA=/home/fpc/FunPayCardinal/storage/offer_studio
+Environment=PLAYWRIGHT_BROWSERS_PATH=/opt/offerstudio/browsers
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/offerstudio/venv/bin/python worker.py
+Restart=always
+RestartSec=15
+RuntimeMaxSec=6h
+MemoryHigh=800M
+MemoryMax=1100M
+TimeoutStopSec=70
+UMask=0077
+NoNewPrivileges=true
+[Install]
+WantedBy=multi-user.target

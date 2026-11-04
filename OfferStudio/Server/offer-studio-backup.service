@@ -1,0 +1,8 @@
+[Unit]
+Description=Offer Studio SQLite backup
+[Service]
+Type=oneshot
+User=fpc
+WorkingDirectory=/home/fpc/FunPayCardinal/storage/offer_studio/code
+ExecStart=/opt/offerstudio/venv/bin/python backup.py
+UMask=0077

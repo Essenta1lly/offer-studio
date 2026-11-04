@@ -1,0 +1,11 @@
+[Unit]
+Description=Offer Studio remote browser desktop (loopback only)
+After=offer-studio-display.service
+Requires=offer-studio-display.service
+[Service]
+User=fpc
+ExecStart=/usr/bin/x11vnc -display :99 -forever -shared -localhost -nopw -rfbport 5900 -noxdamage
+Restart=always
+RestartSec=5
+[Install]
+WantedBy=multi-user.target
